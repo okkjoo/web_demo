@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+$backgroundBase: #619e9e;
+$darkAccent: #224b4b;
+$lightAccent: #2cda9d;
+$default-border: 1px solid darken($backgroundBase, 35%);
+$shadow: 1px 1px 10px 2px darken($backgroundBase, 20%);
+
+*{
+  box-sizing: border-box;
+}
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  background-color: lighten($backgroundBase, 10%);
+  margin: 10px 0;
+}
+
+
+.colorScheme {
+  background-color: lighten($backgroundBase, 30%);
+  border: $default-border;
+  box-shadow: $shadow;
+  border-top: none;
+}
+.grid{
+  display:  grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+
+  column-gap: 10px;
+  align-content:space-between;
+}
+.test{
+  background-color: antiquewhite;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  background-color: lighten($darkAccent, 25%);
+  padding: 0.3rem;
+  border: $default-border;
+  box-shadow: $shadow;
+  font-family: Russo One;
+  font-size: 1rem;
+  color: black;
+  i {
+    width: 25px;
+    margin-left: 5px;
+  }
+  .fa-arrows-alt,
+  .fa-compress {
+    margin-left: auto;
+  }
+}
+
+.fa-retweet,
+.fa-compress,
+.fa-arrows-alt {
+  &:hover {
+    color: lighten($lightAccent, 10%);
+    cursor: pointer;
+  }
+}
+
+.fa-free-code-camp {
+  margin-right: 3px;
+}
+
+.editorWrap{
+  grid-row: span 12;
+  grid-column: 2/span 5;
+  .toolbar{
+    width:99%;
+  }
+  textarea {
+    @extend .colorScheme;
+    width: 99%;
+    height: 400px;
+    // margin-bottom: -5px;
+    resize: vertical;
+    outline: none;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-size: 0.875rem;
+  }
+}
+.previewWrap {
+  overflow-wrap: break-word;
+  grid-row: span 12;
+  grid-column: span 6;
+  margin-right: 10px;
+  .toolbar{
+    width:auto;
+
+  }
+  #preview{
+    @extend .colorScheme;
+    overflow: scroll;
+    max-height: 400px;
+  }
+}
+.maximized{
+  grid-column:2/span 10;
+}
+.hide{
+  display: none;
+}
+// MARKDOWN STYLES
+#preview {
+  padding: 0 1rem;
+
+  blockquote {
+    border-left: 3px solid #224b4b;
+    color: #224b4b;
+    padding-left: 5px;
+    margin-left: 25px;
+  }
+
+  > p > code {
+    padding: 3px;
+  }
+
+  code {
+    background: white;
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+
+  pre {
+    display: block;
+    overflow: auto;
+    background: white;
+    padding: 5px;
+    line-height: 1.2;
+  }
+
+  h1 {
+    border-bottom: 2px solid $darkAccent;
+  }
+
+  h2 {
+    border-bottom: 1px solid $darkAccent;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    border: 2px solid $darkAccent;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  img {
+    display: block;
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+}
+@media screen and (max-width: 650px){
+  .editorWrap{
+    grid-column: 2/span 10;
+  }
+  .previewWrap{
+    grid-column: 2/span 10;
+  }
+}
