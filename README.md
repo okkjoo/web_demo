@@ -50,3 +50,6 @@ react是在虚拟dom上进行操作的，传统动画效果是直接操作实际
 利用state完成对map遍历时控制样式的变化。
 
 参考文章：[react遍历li加样式](https://blog.csdn.net/knowledge_bird/article/details/88886731)
+
+### 06_online Jokes 
+用到fetch来向一个笑话网站发送请求
