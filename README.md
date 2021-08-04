@@ -53,3 +53,17 @@ react是在虚拟dom上进行操作的，传统动画效果是直接操作实际
 
 ### 06_online Jokes 
 用到fetch来向一个笑话网站发送请求
+
+### 07_moive_byHooks
+要用到的API--[moviveAppApi](http://www.omdbapi.com/),key是别人现成的，你也可以自己去[获取](http://www.omdbapi.com/apikey.aspx)
+
+参考文章：[HOOKED＿moive](https://www.freecodecamp.org/news/how-to-build-a-movie-search-app-using-react-hooks-24eb72ddfaf7/)
+#### 组件
+- APP: 其他三个组件的父组件，包含处理 API 请求的函数，还有组件初始化时调用 API 的函数
+- Header: 渲染app的头部并接受一个标题的props
+- Movie： 渲染电影对象，接受电影相关参数作为props
+- Search： 包含输入和搜索表单、搜索函数
+#### 用到的Hooks
+- useState
+- useEffect
+- useReducer
