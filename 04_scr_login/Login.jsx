@@ -30,7 +30,7 @@ export default class Login extends Component {
 					</div>
 					<button className="btn">Login</button>
 					<p className="text">
-						Dont't have an account?<a href="#">Register</a>
+						Dont't have an account?<a href="/">Register</a>
 					</p>
 				</form>
 			</div>
