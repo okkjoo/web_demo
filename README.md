@@ -33,6 +33,7 @@ html css Javascript React 全家桶后面的有 typescript
 
 - [50projects50days](https://github.com/bradtraversy/50projects50days)比较简单
 - [freeCodeCamp](https://chinese.freecodecamp.org/learn/front-end-libraries/#front-end-libraries-projects)比较难
+- 自己要实现一些需求，先做些 demo 实践方法
 
 ## 笔记
 
