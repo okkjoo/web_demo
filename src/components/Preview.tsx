@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Iframe from './Iframe'
 import { useState } from 'react'
+import '../css/App.css'
 
 type IPreivew = {
   MobileUI: React.FC
@@ -21,6 +22,28 @@ const Preview: React.FC<IPreivew> = ({ MobileUI, id }) => {
       window.removeEventListener('resize', resizeListener)
   })
 
+  // 通过动态插入样式表设置样式
+  const cssLinkHref = 'App.css'
+  useEffect(() => {
+    let cssLink = document.createElement('link')
+    cssLink.href = cssLinkHref
+    cssLink.rel = 'stylesheet'
+    cssLink.type = 'text/css'
+
+    const iframeDom = window.frames[id].contentDocument
+    /* or (
+      document.getElementById(id) as HTMLIFrameElement
+    )?.contentDocument */
+
+    // console.log('iframeDom', iframeDom)
+    // console.log(cssLink)
+
+    const headDom = iframeDom
+      ?.getElementsByTagName('HEAD')
+      .item(0)
+    // console.log('headDom', headDom)
+    headDom?.appendChild(cssLink)
+  }, [cssLinkHref, id])
   return isMobile ? (
     <div>
       <MobileUI />

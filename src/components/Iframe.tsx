@@ -19,6 +19,7 @@ const Iframe: React.FC<IIframe> = ({
 
   return (
     <iframe
+      id={id}
       title={title}
       ref={contentRef}
       {...props}

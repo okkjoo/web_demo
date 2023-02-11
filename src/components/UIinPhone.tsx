@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/App.css' //这样引入样式对于iframe中的组件是无效的
+// import '../css/App.css' //这样引入样式对于iframe中的组件是无效的
 
 /**
  *
@@ -14,36 +14,37 @@ const UIinPhone: React.FC = () => {
   }
   return (
     <div
-      style={{
+      className='phone-ui'
+      /* style={{
         display: 'flex',
         flexDirection: 'column',
         width: '100vw',
         height: '100vh',
-      }}
+      }} */
       onClick={handleClick}
     >
       <header
-        style={{
+      /*  style={{
           backgroundColor: 'aqua',
           width: '100vw',
           flexBasis: '100px',
-        }}
+        }} */
       >
         header
       </header>
       <main
-        style={{
+      /*  style={{
           backgroundColor: 'bisque',
           flexGrow: 1,
-        }}
+        }} */
       >
         main
       </main>
       <footer
-        style={{
+      /*  style={{
           backgroundColor: 'cadetblue',
           flexBasis: '100px',
-        }}
+        }} */
       >
         footer
       </footer>

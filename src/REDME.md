@@ -36,11 +36,31 @@ const App: React.FC = () => {
 
 ![1676113946589](image/REDME/1676113946589.gif)
 
+## 2.0
+
+1.0 缺陷，body 无法自定义清除样式，只能行内样式，相对路径引入报错
+
+2.0 我尝试动态插入 link 标签引入 css 但还是失败了 —— 之后再看看
+
+```js
+let cssLink = document.createElement('link')
+cssLink.href = cssLinkHref
+cssLink.rel = 'stylesheet'
+cssLink.type = 'text/css'
+
+const iframeDom = window.frames[id].contentDocument
+
+const headDom = iframeDom
+  ?.getElementsByTagName('HEAD')
+  .item(0)
+headDom?.appendChild(cssLink)
+```
+
 # 遇到的问题
 
 - 在 UI 组件直接引入 CSS 的话， iframe 标签中的样式就会失效 —— 现在只能选择行内样式
 
-> 网上有说使用绝对路径引入 CSS 的，但我没有尝试文件
+> 网上有说使用绝对路径引入 CSS 的，但我没有尝试
 
 # 文件介绍
 
