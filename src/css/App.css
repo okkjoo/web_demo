@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+.phone-ui {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.phone-ui header {
+  background-color: aqua;
+  width: 100vw;
+  flex-basis: 100px;
+}
+.phone-ui main {
+  background-color: bisque;
+  flex-grow: 1;
+}
+.phone-ui footer {
+  background-color: cadetblue;
+  flex-basis: 100px;
+}
